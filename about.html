@@ -1,0 +1,361 @@
+?<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About ATLANTIC EMS - Your trusted hospital in ATLANTIC ROLEPLAY. Learn about our history, mission, values, departments, facilities and medical team at 8040 Integnty Way.">
+  <title>About Us | ATLANTIC EMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="ATLANTIC EMS" class="logo-img">
+        <span class="logo-text">
+          <span class="logo-title">ATLANTIC</span>
+          <span class="logo-subtitle">ROLEPLAY</span>
+        </span>
+      </a>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link nav-dropdown-link">EMS JOB
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="rules.html" class="dropdown-link">RULES JOB</a>
+            <a href="joining.html" class="dropdown-link">JOINING JOB</a>
+            <a href="departement.html" class="dropdown-link">DEPARTEMENT JOB</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link nav-dropdown-link">EMS REQUEST
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="medication.html" class="dropdown-link">MEDICATION REQUEST</a>
+            <a href="medical-appointment.html" class="dropdown-link">MEDICAL APPOINTMENT</a>
+            <a href="medical-certificate.html" class="dropdown-link">MEDICAL CERTIFICATE</a>
+            <a href="medical-test.html" class="dropdown-link">MEDICAL TESTS</a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="index.html#gallery" class="nav-link">Gallery</a>
+      </nav>
+
+      <span class="nav-actions">
+        <button class="btn btn-discord" id="navLogin" onclick="loginWithDiscord()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+          Login
+        </button>
+        <span class="nav-user" id="navUser" style="display: none;">
+          <div class="user-profile" id="userProfile" onclick="toggleUserMenu(event)">
+            <div class="user-avatar-small" id="userAvatar">
+              <img id="userAvatarImg" alt="" style="display:none;">
+              <span id="userInitials">E</span>
+            </div>
+            <span class="user-name" id="navUserName">Hi, Emma</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="user-dropdown" id="userDropdown">
+            <div class="dropdown-header">
+              <span class="dropdown-name" id="dropdownName"></span>
+              <span class="dropdown-email" id="dropdownEmail"></span>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item" id="dropdownProfessionRow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span id="dropdownProfessionLabel">Patient</span>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item" onclick="logout()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              Logout
+            </div>
+          </div>
+        </span>
+      </span>
+
+      <button class="hamburger" id="hamburger" aria-label="Main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT HERO -->
+    <section class="hero about-hero section-padding" id="about">
+      <div class="container">
+        <div class="hero-card about-hero-card">
+          <div class="hero-content">
+            <span class="hero-tag">About ATLANTIC EMS</span>
+            <h1 class="hero-title">Excellence in Healthcare, <span class="gradient-text">Right in the Heart of the City</span></h1>
+            <p class="hero-description">
+              Located at 8040 Integnty Way, ATLANTIC ROLEPLAY — we bring you state-of-the-art medical equipment,
+              premium facilities, and the most skilled doctors in the city across all specialties.
+            </p>
+            <a href="contact.html" class="btn btn-white">Contact Us</a>
+          </div>
+          <div class="hero-image-wrapper">
+            <img src="assets/doctor-hero.png" alt="ATLANTIC EMS Medical Team" class="hero-doctor-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="section-padding" id="story">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2>Our <span class="gradient-text">Story</span></h2>
+          <p>From a single emergency unit to the city's most trusted medical facility.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image-wrapper">
+            <div class="about-bg-shape"></div>
+            <img src="assets/hospital-blueprint.jpeg" alt="ATLANTIC EMS Hospital Blueprint" class="about-doctor-img">
+            <div class="about-experience-badge">
+              <span class="experience-num">5+</span>
+              <span class="experience-text">Years of Excellence</span>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <h3>We Provide the Best Medical Care for You and Your Family</h3>
+            <p class="about-description">
+              ATLANTIC EMS is a premier medical facility located at <strong>8040 Integnty Way, ATLANTIC ROLEPLAY</strong>.
+              Our hospital is equipped with state-of-the-art medical technology and premium facilities to serve
+              all your healthcare needs.
+            </p>
+            <p class="about-description">
+              We take pride in having the most skilled and experienced doctors in the city, covering all medical
+              specialties. From emergency care to specialized treatments, our team is dedicated to providing
+              the highest standard of medical care — 24 hours a day, 7 days a week.
+            </p>
+
+            <div class="about-stats">
+              <div class="about-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Specialist Doctors</span>
+              </div>
+              <div class="about-stat">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Emergency Service</span>
+              </div>
+              <div class="about-stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Medical Departments</span>
+              </div>
+              <div class="about-stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Patient Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="section-padding about-mission-section" id="mission">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2>Mission & <span class="gradient-text">Vision</span></h2>
+          <p>What drives us every single day.</p>
+        </div>
+        <div class="mission-grid">
+          <div class="mission-card">
+            <div class="mission-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              To deliver compassionate, accessible and world-class medical care to every citizen of ATLANTIC ROLEPLAY —
+              combining advanced technology with the human touch to save lives and improve health outcomes.
+            </p>
+          </div>
+          <div class="mission-card">
+            <div class="mission-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              To be the leading healthcare institution in the city — a hospital where every patient feels safe,
+              every doctor is empowered, and excellence in medicine is the standard, not the exception.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section-padding" id="values">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2>Our Core <span class="gradient-text">Values</span></h2>
+          <p>The principles that guide our team of medical professionals.</p>
+        </div>
+        <div class="values-grid">
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <h3>Compassion</h3>
+            <p>We treat every patient as family — with kindness, empathy and genuine care in every interaction.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <h3>Integrity</h3>
+            <p>Honesty and ethics are at the core of everything we do, from diagnosis to treatment and billing.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Excellence</h3>
+            <p>We pursue the highest standards in medicine through continuous training and modern equipment.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Teamwork</h3>
+            <p>Our doctors, nurses and technicians work as one team to deliver coordinated, effective care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPARTMENTS -->
+    <section class="section-padding about-departments-section" id="departments">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2>Our <span class="gradient-text">Departments</span></h2>
+          <p>Comprehensive medical care across all specialties, all under one roof.</p>
+        </div>
+
+        <div class="departments-grid">
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Cardiology</h3>
+            <p>Expert heart care with modern diagnostic equipment and experienced cardiologists.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+            </div>
+            <h3>Pediatrics</h3>
+            <p>Specialized care for infants, children, and adolescents in a child-friendly environment.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <h3>Orthopedics</h3>
+            <p>Comprehensive treatment for bone, joint, and muscle conditions with advanced surgical options.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <h3>Neurology</h3>
+            <p>Advanced neurological care with state-of-the-art diagnostic and treatment technologies.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+            </div>
+            <h3>Emergency Medicine</h3>
+            <p>24/7 emergency care with rapid response teams and fully equipped trauma units.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>General Surgery</h3>
+            <p>Modern surgical suites and expert surgeons performing a wide range of procedures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACILITIES -->
+    <section class="section-padding" id="facilities">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2>Our <span class="gradient-text">Facilities</span></h2>
+          <p>State-of-the-art infrastructure built around patient comfort and safety.</p>
+        </div>
+        <div class="values-grid">
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+            </div>
+            <h3>Advanced Imaging</h3>
+            <p>MRI, CT, X-ray and ultrasound suites for fast and accurate diagnosis.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Modern Operating Theatres</h3>
+            <p>Fully equipped surgical suites supporting a wide range of procedures.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </div>
+            <h3>24/7 Emergency Room</h3>
+            <p>Rapid response trauma units staffed around the clock, ready when you need us most.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15h6"/><path d="M9 11h6"/></svg>
+            </div>
+            <h3>In-House Pharmacy</h3>
+            <p>Fully stocked pharmacy with a wide range of medications available on-site.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+            </div>
+            <h3>Ambulance Fleet</h3>
+            <p>Modern, fully equipped ambulances with rapid city-wide response capability.</p>
+          </div>
+          <div class="department-card">
+            <div class="dept-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+            </div>
+            <h3>Comfortable Patient Rooms</h3>
+            <p>Private and semi-private rooms designed for comfort, privacy and faster recovery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" style="padding: 24px 0; background-color: #ffffff; color: #000000;">
+    <div class="container footer-bottom" style="padding-top: 0; border-top: 0;">
+      <p>&copy; 2026 <a href="https://discord.gg/atlantic-roleplay-492135997342220318" style="color: #0d6b8a; text-decoration: none;" target="_blank" rel="noopener noreferrer">ATLANTIC EMS</a>. All rights reserved. Create by <a href="https://discord.com/users/1211089599556751402" style="color: #0d6b8a; text-decoration: none;" target="_blank" rel="noopener noreferrer">D R A K U T O</a></p>
+      <p>8040 Integnty Way, ATLANTIC ROLEPLAY</p>
+    </div>
+  </footer>
+
+  <script src="node_modules/@supabase/supabase-js/dist/umd/supabase.js"></script>
+  <script src="supabase.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

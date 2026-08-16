@@ -1,0 +1,12 @@
+{
+  "name": "atlantic-ems",
+  "version": "1.0.0",
+  "description": "ATLANTIC EMS — Hospital website with Discord OAuth2 via Supabase Auth",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.108.2"
+  }
+}
